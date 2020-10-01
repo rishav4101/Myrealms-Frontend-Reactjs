@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Icon from '@material-ui/core/Icon'
 import Navbar from '../components/navBar'
-import Apbar from '../components/appBar.js'
+import Apbar from '../components/appbar.js'
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import theme from '../theme';
