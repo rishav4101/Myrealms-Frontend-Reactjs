@@ -22,10 +22,12 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Container from '@material-ui/core/Container';
 import Slide from '@material-ui/core/Slide';
 import Button from '@material-ui/core/Button'
-import MenuItem from '../components/menuLI.jsx'
+import MenuItem from './menuLI.js'
+import { MenuRounded } from '@material-ui/icons';
 
 
 const drawerWidth = 260;
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,14 +41,14 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    marginRight: drawerWidth,
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
+  title: {
+    flexGrow: 1,
   },
   hide: {
     display: 'none',
@@ -64,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
   },
   content: {
     flexGrow: 1,
@@ -73,22 +75,40 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -drawerWidth,
+    marginRight: -drawerWidth,
   },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 0,
+    marginRight: 0,
   },
-
+  logo:{
+    maxWidth:"3vw",
+    "@media screen and (max-width: 800px) and (min-width: 500px)": {
+      maxWidth:"5vw",
+    },
+    "@media screen and (max-width: 500px)": {
+      maxWidth:"10vw",
+    },
+  }
 }));
 
+export default function PersistentDrawerRight() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [open, setOpen] = React.useState(false);
 
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
 
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
 
-
+  
 function HideOnScroll(props) {
   const { children, window } = props;
   // Note that you normally won't need to set the window ref as useScrollTrigger
@@ -112,91 +132,79 @@ HideOnScroll.propTypes = {
   window: PropTypes.func,
 };
 
-
-export default function PersistentDrawerLeft() {
-  const classes = useStyles();
-  const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
   return (
     <div className={classes.root}>
       <React.Fragment>
       <CssBaseline />
-      <HideOnScroll>
+      <HideOnScroll >
       <AppBar
-      style={{overflor:"hidden", paddingTop:"1%", background: "transparent", boxShadow:"none", backdropFilter:"blur(10px)"}}
+            style={{overflow:"hidden", paddingTop:"1%", backgroundColor:"rgba(16, 204, 249, 0.05)", boxShadow:"none", backdropFilter:"blur(10px)"}}
+
         position="fixed"
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
       >
         <Toolbar>
+        <IconButton href="/">
+      <img  className={classes.logo} src="/logo-myr_nb.png" alt="logo"/>
+      </IconButton>
           <IconButton
-          style={{outline:"none"}}
-            color="inherit"
+            style={{outline:"none", color:"#10CCF9", position:"absolute", right:"2vw"}}
+           
             aria-label="open drawer"
+            edge="end"
             onClick={handleDrawerOpen}
-            edge="start"
-            className={clsx(classes.menuButton, open && classes.hide)}
+            className={clsx(open && classes.hide)}
           >
-            <MenuIcon fontSize="large" className="mIcon"/>
+            <MenuRounded  fontSize="large" />
           </IconButton>
-          <IconButton style={{position:"absolute", right:"2vw"}} edge ="end" className={classes.logo} href="/">
-     <img src="/logo-myr@1x25.png" alt="logo"/>
-     </IconButton>
         </Toolbar>
       </AppBar>
-        </HideOnScroll>
-          <Toolbar />
-
+     
+      </HideOnScroll>
+      <Toolbar />
+      
       <Drawer
         className={classes.drawer}
         variant="persistent"
-        anchor="left"
+        anchor="right"
         open={open}
         classes={{
           paper: classes.drawerPaper,
         }}
       >
-      <div style={{backgroundColor:"#BFDEED"}} className={classes.drawerHeader}>
-        <IconButton style={{outline:"none"}} onClick={handleDrawerClose}>
-          {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-        </IconButton>
-      </div>
-      <List style={{backgroundColor:"#F3D1DB"}}>
-      <ListItem >
-<img style={{borderRadius:"100px", maxWidth:"100px", display:"block"}} src="/avatar-1.jpg" alt="avatar-1"/>
-       </ListItem>
+         <div style={{backgroundColor:"#BFDEED"}} className={classes.drawerHeader}>
+         <IconButton style={{outline:"none"}} onClick={handleDrawerClose}>
+           {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+         </IconButton>
+       </div>
+       <List style={{backgroundColor:"#F3D1DB"}}>
        <ListItem >
-         <ListItemText  style={{ display:"block", color:"#644154", fontSize:"18px", fontWeight:"500", letterSpacing:"3px"}} disableTypography={true}  primary= "Your Name" />
-       </ListItem>
+ <img style={{borderRadius:"100px", maxWidth:"100px", display:"block"}} src="/avatar-1.jpg" alt="avatar-1"/>
+        </ListItem>
+        <ListItem >
+          <ListItemText  style={{ display:"block", color:"#644154", fontSize:"18px", fontWeight:"500", letterSpacing:"3px"}} disableTypography={true}  primary= "Your Name" />
+        </ListItem>
 
-      </List>
+       </List>
 
-      <List style={{color:"red",height:"100vh", backgroundImage:"url(/menuBG.png)", backgroundSize:"cover", backgroundRepeat: "no-repeat"}}>
-      <MenuItem url="/account" name="My account" icname="face"/>
-      <MenuItem url="/" name="Home" icname="home"/>
-      <MenuItem url="/discover" name="Discover" icname="explore"/>
-      <MenuItem url="/about" name="About" icname="more"/>
-      <MenuItem url="/contact" name="Contacts" icname="contacts"/>
+       <List style={{color:"red",height:"100vh", backgroundImage:"url(/menuBG.png)", backgroundSize:"cover", backgroundRepeat: "no-repeat"}}>
+       <MenuItem url="/account" name="My account" icname="face"/>
+       <MenuItem url="/" name="Home" icname="home"/>
+       <MenuItem url="/discover" name="Discover" icname="explore"/>
+       <MenuItem url="/about" name="About" icname="more"/>
+       <MenuItem url="/contact" name="Contacts" icname="contacts"/>
 
-      <MenuItem name="Logout" icname="keyboard_return"/>
+       <MenuItem name="Logout" icname="keyboard_return"/>
 
 
-      </List>
-
+       </List>
       </Drawer>
-
-        </React.Fragment>
-
+    </React.Fragment>
+      <CssBaseline />
+    
     </div>
   );
 }
+
