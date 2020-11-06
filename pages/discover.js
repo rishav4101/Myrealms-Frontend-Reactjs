@@ -1,26 +1,10 @@
-import Layout from '../src/components/Layout.js'
-import Head from 'next/head'
-import Link from 'next/link'
-import Icon from '@material-ui/core/Icon'
-import Navbar from '../src/components/navBar'
-import Apbar from '../src/components/appbar.js'
-import Paper from '@material-ui/core/Paper';
+import Head from 'next/head';
+import Navbar from '../src/components/navBar';
+import Apbar from '../src/components/appbar.js';
 import Grid from '@material-ui/core/Grid';
-import theme from '../src/theme';
-import Button from '@material-ui/core/Button';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CardHome from '../src/components/cardHome.js'
-import CardActionArea from '@material-ui/core/CardActionArea';
-import ContactCard from '../src/components/contactCard.js'
-import { Slide } from 'material-auto-rotating-carousel';
-import { red, blue, green } from'@material-ui/core/colors'
-import { AutoRotatingCarousel } from 'material-auto-rotating-carousel';
-import CarouselT from '../src/components/carouselTxt.js'
-import MyChip from '../src/components/chip.js'
-import LocationOn from "@material-ui/icons/LocationOn";
+import MyChip from '../src/components/chip.js';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import {useTheme } from '@material-ui/core/styles';
@@ -28,7 +12,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
-import DrCard from '../src/components/drCard.js'
+import DrCard from '../src/components/drCard.js';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

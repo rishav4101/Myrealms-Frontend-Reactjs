@@ -6,6 +6,8 @@ function* status() {
     yield put({type:"STATUS_FETCHED", payload:status})
 }
 
+
+
 export default function* watchAsync() {
     yield takeEvery("FETCH_STATUS", status);
 }
