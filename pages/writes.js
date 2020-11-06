@@ -1,17 +1,8 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Icon from '@material-ui/core/Icon'
 import Navbar from '../src/components/navBar.js'
 import Apbar from '../src/components/appBar.js'
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import theme from '../src/theme';
-import Button from '@material-ui/core/Button';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CardHome from '../src/components/cardHome.js'
 import Nfeed from '../src/components/nfeed.js'
 
 const useStyles = makeStyles((theme) => ({

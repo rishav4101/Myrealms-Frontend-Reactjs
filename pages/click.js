@@ -1,18 +1,10 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import Icon from '@material-ui/core/Icon'
 import Navbar from '../src/components/navBar.js'
 import Apbar from '../src/components/appBar.js'
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import theme from '../src/theme';
-import Button from '@material-ui/core/Button';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CardHome from '../src/components/cardHome.js'
-import Nfeed from '../src/components/nfeed.js'
+import Nfeed from '../src/components/nfeed.js';
+import Layout from '../src/components/Layout.js'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +23,8 @@ export default function writes() {
   const classes = useStyles();
   return (
     <>
-    <div className="container">
+    <Layout>
+    {/* <div className="container">
       <Head>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" />
@@ -43,7 +36,7 @@ export default function writes() {
 
       <main className="main">
     <Navbar />
-    <Apbar/>
+    <Apbar/> */}
 
 
         <h1 className="title">
@@ -78,11 +71,12 @@ export default function writes() {
             url="/post/16.jpeg"
            />
 
-      </main>
+      {/* </main>
       <footer className="footer">
       <p>&copy; My Realms {d} All rights reserved</p>
       </footer>
-    </div>
+    </div> */}
+    </Layout>
     </>
   )
 }
