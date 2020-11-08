@@ -20,7 +20,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import Button from '@material-ui/core/Button';
-import actions from '../actionTypes';
+import { useTypedSelector } from '../lib/reducers';
 
 
 
@@ -66,6 +66,8 @@ var d = new Date().getFullYear();
 export default function signUp() {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const fetchUser = useTypedSelector((state) => state.display.user_resp);
+  
   const [values, setValues] = React.useState({
     amount: '',
     password: '',
@@ -78,17 +80,24 @@ export default function signUp() {
 
   const handleSubmit = event => {
     event.preventDefault();
+    console.log('check');
     dispatch({
-      type: actions.SIGNUP_USER,
-      payload: {
+      type: "SIGNUP_USER",
+      payload: JSON.stringify({
         user: {
-          password: password,
-          username: username,
-          email: email
+          email: "kr",
+          password: "kr",
+          username: "kr",
         }
-      }
+      })
     });
+    console.log('dispatched');
+    console.log(fetchUser);
+    
   };
+
+  
+  
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -125,7 +134,7 @@ export default function signUp() {
               Painting the world in the rhythm of words
        </h2>
           </div>
-          <form style={{ margin: "5vw auto 0", flexDirection: "column", fontFamily: "Century Gothic", }} className={classes.root} onSubmit={handleSubmit} noValidate>
+          <form style={{ margin: "5vw auto 0", flexDirection: "column", fontFamily: "Century Gothic", }} className={classes.root} noValidate>
             <div>
               <ValidationTextField
                 autoFocus
@@ -169,6 +178,7 @@ export default function signUp() {
 
           </form>
           <Button className={classes.margin}
+            onClick={handleSubmit}
             style={{ textTransform: "uppercase", fontFamily: "Century Gothic", fontSize: "16px", borderRadius: "200px", backgroundColor: "#Ed165a", color: "#FDE7EB", maxWidth: "70vw", minWidth: "20vw", boxShadow: " 0 4px 10px #BEBEBE", padding: "7px 75px", }} size="large" variant="contained" >Sign Up</Button>
           <p className="text description" style={{ marginTop: "20px", color: "#Ed165a", paddingBottom: "5px" }}>I have an account, <a href="/signIn" style={{ textDecoration: "none", textShadow: "0 4px 10px  #Ed165a" }}>Sign me in</a></p>
 
