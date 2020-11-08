@@ -1,18 +1,7 @@
-import Head from "next/head";
-import Link from "next/link";
-import Icon from "@material-ui/core/Icon";
-import Navbar from "../src/components/navBar.js";
-import Apbar from "../src/components/appBar.js";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import theme from "../src/theme";
 import Button from "@material-ui/core/Button";
-import ListItem from "@material-ui/core/ListItem";
-import List from "@material-ui/core/List";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import CardHome from "../src/components/cardHome.js";
-import Nfeed from "../src/components/nfeed.js";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,38 +13,32 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
+  btn : {
+    textTransform: "uppercase",
+    fontFamily: "Roboto",
+    fontWeight: "300",
+    fontSize: "13px",
+    borderRadius: "200px",
+    backgroundColor: "#FBB591",
+    color: "#71092C",
+    maxWidth: "70vw",
+    minWidth: "20vw",
+    boxShadow: " 0 1px 10px rgba(249, 102, 118, 0.5)",
+    padding: "7px 40px",
+    "&:hover": {
+      backgroundColor: "#FBB591",
+      color: "#71092C",
+      boxShadow: " 0 2px 30px rgba(249, 102, 118, 0.3)",
+    },
+  },
 }));
-var d = new Date().getFullYear();
 
 export default function Home() {
   const classes = useStyles();
   return (
     <>
       <div className="container">
-        <Head>
-          <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-          />
-          <title>My Realms-Painting the world in the rhythm of word</title>
-          <link rel="icon" href="/favicon.ico" />
-          //{" "}
-          <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
-
         <main className="main">
-          <Navbar />
-          <Apbar />
-
           <h1 className="title">
             <img className="heading" src="/myrH1.png" alt="My realms" />
           </h1>
@@ -94,20 +77,9 @@ export default function Home() {
                     faucibus interdum posuere lorem.
                   </p>
                   <Button
+                  className={classes.btn}
                     href="/about"
-                    style={{
-                      textTransform: "uppercase",
-                      fontFamily: "Roboto",
-                      fontWeight: "300",
-                      fontSize: "13px",
-                      borderRadius: "200px",
-                      backgroundColor: "#FBB591",
-                      color: "#71092C",
-                      maxWidth: "70vw",
-                      minWidth: "20vw",
-                      boxShadow: " 0 1px 20px rgba(249, 102, 118, 0.3)",
-                      padding: "7px 40px",
-                    }}
+                   
                     varient="contained"
                   >
                     More about us
@@ -159,10 +131,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="testimonial"
-                   
-                  >
+                  <div className="testimonial">
                     <img
                       className="avatar"
                       style={{ float: "left" }}
@@ -186,12 +155,7 @@ export default function Home() {
               </Grid>
             </Grid>
           </div>
-         
         </main>
-        
-        <footer className="footer">
-          <p>&copy; My Realms {d} All rights reserved</p>
-        </footer>
       </div>
     </>
   );

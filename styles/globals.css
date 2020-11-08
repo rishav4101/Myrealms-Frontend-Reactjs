@@ -163,7 +163,7 @@ text-align: center;
 
 .sub-h{
   display: block;
-  margin: 20vh auto 4vh;
+  margin: 10vh auto 4vh;
   width: 40%;
 }
 .disc{
@@ -214,11 +214,11 @@ height:40vh;
   }
 
   .testCar{
-    minHeight:270px ;
-    maxHeight:270px;
-    verticalAlign:center;
+    min-height:270px ;
+    max-height:270px;
+    vertical-align:center;
     margin:0 auto;
-    textAlign:center;
+    text-align:center;
     padding:5vw;
   }
 .drcard-det{
@@ -245,11 +245,11 @@ input#file-upload-button{
   /* ------------------------------Discover page CSS -----------------*/
 
   .topcar{
-    marginTop:0;
-    maxHeight:100vh;
-    minHeight:100vh;
-    overflowY:hidden;
-    overflowX:hidden;
+    margin-top:0;
+    max-height:100vh;
+    min-height:100vh;
+    overflow-y:hidden;
+    overflow-x:hidden;
   }
 
     .bg{
@@ -482,8 +482,8 @@ margin-left: 20%;
     padding-bottom: 17vw;
   }
   .testCar{
-    minHeight:40vw;
-    maxHeight:40vw;
+    min-height:40vw;
+    max-height:40vw;
     font-size:4.5vw;
   }
   .disc{

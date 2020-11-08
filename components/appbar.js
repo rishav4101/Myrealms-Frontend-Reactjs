@@ -1,6 +1,3 @@
-import Link from "next/link";
-import Icon from "@material-ui/core/Icon";
-
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -56,10 +53,10 @@ export default function BottomAppBar() {
         position="fixed"
         className={classes.appBar}
       >
-        <Toolbar >
+        <Toolbar>
           <div className="cc">
             <IconButton
-              style={{color: "#10CCF9", outline: "none", marginRight: "5%" }}
+              style={{ color: "#10CCF9", outline: "none", marginRight: "5%" }}
               href="/art"
               edge="start"
               color="inherit"
@@ -68,7 +65,7 @@ export default function BottomAppBar() {
               <PaletteIcon />
             </IconButton>
             <IconButton
-              style={{color: "#10CCF9", outline: "none", marginRight: "5%" }}
+              style={{ color: "#10CCF9", outline: "none", marginRight: "5%" }}
               href="/writes"
               edge="start"
               color="inherit"
@@ -77,7 +74,7 @@ export default function BottomAppBar() {
               <CreateIcon />
             </IconButton>
             <IconButton
-              style={{color: "#10CCF9",outline: "none", marginRight: "5%" }}
+              style={{ color: "#10CCF9", outline: "none", marginRight: "5%" }}
               href="/addPost"
               edge="start"
               color="inherit"
@@ -86,7 +83,7 @@ export default function BottomAppBar() {
               <AddCircleIcon />
             </IconButton>
             <IconButton
-              style={{color: "#10CCF9",outline: "none" }}
+              style={{ color: "#10CCF9", outline: "none" }}
               href="/click"
               edge="start"
               color="inherit"

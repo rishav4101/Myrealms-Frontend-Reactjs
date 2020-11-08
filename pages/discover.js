@@ -109,7 +109,6 @@ const useStyles = makeStyles((theme, carouselStyle) => ({
 
   }
 ));
-var d= new Date().getFullYear();
 
 export default function discover() {
   const theme = useTheme();
@@ -129,13 +128,7 @@ export default function discover() {
   return (
     <>
     <div className="container">
-    <Head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" />
-        <title>My Realms-Painting the world in the rhythm of word/discover</title>
-        <link rel="icon" href="/favicon.ico" />
-        // <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
-      </Head>
+   
 
 
       <main className="main" style={{marginTop:"0"}}>
@@ -173,8 +166,6 @@ export default function discover() {
 </div>
 
 
-      <Navbar />
-      <Apbar/>
 
 <div style={{paddingTop:"5vh", margin:"20px 5vw", justifyContent:"left"}} className={classes.root}>
   <MyChip name="Poems" color="#FDE7EB" />

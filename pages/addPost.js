@@ -1,11 +1,5 @@
-import Head from "next/head";
-import Navbar from "../src/components/navBar.js";
-import Apbar from "../src/components/appBar.js";
-import Fab from "@material-ui/core/Fab";
-import AddIcon from "@material-ui/icons/Add";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Transform } from "@material-ui/icons";
 import TextField from "@material-ui/core/TextField";
 import MenuItem from "@material-ui/core/MenuItem";
 
@@ -70,15 +64,7 @@ export default function Home() {
   return (
     <>
       <div className="container">
-        <Head>
-          <title>My Realms-Add Post</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
         <main className="main">
-          <Navbar />
-          <Apbar />
-
           <h1 className="title">
             <img className="heading" src="/myrH1.png" alt="My realms" />
           </h1>
@@ -142,10 +128,6 @@ export default function Home() {
             </div>
           </div>
         </main>
-
-        <footer className="footer">
-          <p>&copy; My Realms {d} All rights reserved</p>
-        </footer>
       </div>
     </>
   );
