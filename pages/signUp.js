@@ -20,6 +20,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
 import Button from '@material-ui/core/Button';
+import { useTypedSelector } from '../lib/reducers';
 
 
 
@@ -65,6 +66,8 @@ var d = new Date().getFullYear();
 export default function signUp() {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const fetchUser = useTypedSelector((state) => state.display.user_resp);
+  
   const [values, setValues] = React.useState({
     amount: '',
     password: '',
@@ -77,18 +80,24 @@ export default function signUp() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log('check')
+    console.log('check');
     dispatch({
       type: "SIGNUP_USER",
-      payload: {
+      payload: JSON.stringify({
         user: {
-          password: values.password,
-          username: values.username,
-          email: values.email
+          email: "kr",
+          password: "kr",
+          username: "kr",
         }
-      }
+      })
     });
+    console.log('dispatched');
+    console.log(fetchUser);
+    
   };
+
+  
+  
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });

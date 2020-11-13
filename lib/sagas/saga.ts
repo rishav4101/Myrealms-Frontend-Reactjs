@@ -10,11 +10,13 @@ function* status() {
 function* signup(action) {
     let statusf = yield fetch("http://18.212.99.206:8000/user/", {
         method: "POST",
+        mode:"cors",
         headers: {
             "Content-Type": "application/json"
-        }, body: action.payload
-    });
-    let status = yield statusf.json();
+        }, 
+        body: action.payload
+    }).then((resp) => resp.json());
+    let status = yield statusf;
     yield put({ type: "SIGNUP", payload: status })
 }
 
