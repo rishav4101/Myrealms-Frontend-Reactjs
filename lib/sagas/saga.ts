@@ -6,7 +6,6 @@ function* status() {
     yield put({ type: "STATUS_FETCHED", payload: status })
 }
 
-
 function* signup(action) {
     let statusf = yield fetch("http://18.212.99.206:8000/user/", {
         method: "POST",
@@ -20,11 +19,7 @@ function* signup(action) {
     yield put({ type: "SIGNUP", payload: status })
 }
 
-
-
 export default function* watchAsync() {
     yield takeEvery("FETCH_STATUS", status);
     yield takeEvery("SIGNUP_USER", signup);
-
-
 }
