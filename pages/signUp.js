@@ -1,28 +1,16 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from 'next/head';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import {
-  fade,
-  ThemeProvider,
   withStyles,
   makeStyles,
   createMuiTheme,
 } from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
-import InputLabel from '@material-ui/core/InputLabel';
 import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
 import { green } from '@material-ui/core/colors';
 import { useDispatch, useSelector } from 'react-redux';
-import IconButton from '@material-ui/core/IconButton';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-
 import Button from '@material-ui/core/Button';
 import { useTypedSelector } from '../lib/reducers';
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,12 +50,10 @@ const theme = createMuiTheme({
 
 var d = new Date().getFullYear();
 
-
 export default function signUp() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const fetchUser = useTypedSelector((state) => state.display.user_resp);
-  
   const [values, setValues] = React.useState({
     amount: '',
     password: '',
@@ -96,9 +82,6 @@ export default function signUp() {
     
   };
 
-  
-  
-
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
@@ -111,7 +94,6 @@ export default function signUp() {
     event.preventDefault();
   };
 
-
   return (
     <>
       <div className="container">
@@ -120,9 +102,8 @@ export default function signUp() {
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" />
           <title>My Realms-Painting the world in the rhythm of word/signUp</title>
           <link rel="icon" href="/favicon.ico" />
-        // <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
         </Head>
-
 
         <main className="main">
 

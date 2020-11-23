@@ -34,7 +34,7 @@ export default function Home() {
   }, []);
 
   console.log(fetchedStatus);
-
+ 
   return (
     <>
       <div className="container">
