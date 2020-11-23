@@ -1,3 +1,6 @@
+import Head from "next/head";
+import Navbar from "../src/components/navBar";
+import Apbar from "../src/components/appbar.js";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import React from "react";
@@ -13,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
-  btn : {
+  btn: {
     textTransform: "uppercase",
     fontFamily: "Roboto",
     fontWeight: "300",
@@ -25,10 +28,10 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "20vw",
     boxShadow: " 0 1px 10px rgba(249, 102, 118, 0.5)",
     padding: "7px 40px",
-    transition:"0.3s",
-    
+    transition: "0.3s",
+
     "&:hover": {
-      transform:"scale(1.02)",
+      transform: "scale(1.02)",
       backgroundColor: "#FBB591",
       color: "#71092C",
       boxShadow: " 0 2px 30px rgba(249, 102, 118, 0.3)",
@@ -38,6 +41,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Home() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+  const fetchedStatus = useTypedSelector((state) => state.display.status);
+
+  React.useEffect(() => {
+    dispatch({
+      type: "FETCH_STATUS",
+    });
+  }, []);
+
+  console.log(fetchedStatus);
+
   return (
     <>
       <div className="container">
@@ -80,9 +94,8 @@ export default function Home() {
                     faucibus interdum posuere lorem.
                   </p>
                   <Button
-                  className={classes.btn}
+                    className={classes.btn}
                     href="/about"
-                   
                     varient="contained"
                   >
                     More about us

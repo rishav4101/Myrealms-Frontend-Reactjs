@@ -1,11 +1,52 @@
+<<<<<<< HEAD
 import Button from "@material-ui/core/Button";
 import React from "react";
 
+=======
+import Head from "next/head";
+import Link from "next/link";
+import Icon from "@material-ui/core/Icon";
+import Navbar from "../src/components/navBar";
+import Apbar from "../src/components/appbar.js";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import theme from "../src/theme";
+import Button from "@material-ui/core/Button";
+import ListItem from "@material-ui/core/ListItem";
+import List from "@material-ui/core/List";
+import React from "react";
+var d = new Date().getFullYear();
+>>>>>>> e15af2d3de40ec750f500a23707017f874813029
 
 export default function start() {
   return (
     <>
       <div className="container">
+<<<<<<< HEAD
+=======
+        <Head>
+          <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+          />
+          <title>
+            My Realms-Painting the world in the rhythm of word/start
+          </title>
+          <link rel="icon" href="/favicon.ico" />
+          //{" "}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+
+>>>>>>> e15af2d3de40ec750f500a23707017f874813029
         <main className="main">
           <h1
             className="title"
@@ -62,6 +103,13 @@ export default function start() {
             Sign Me Up
           </Button>
         </main>
+<<<<<<< HEAD
+=======
+
+        <footer className="footer">
+          <p>&copy; My Realms {d} All rights reserved</p>
+        </footer>
+>>>>>>> e15af2d3de40ec750f500a23707017f874813029
       </div>
     </>
   );
