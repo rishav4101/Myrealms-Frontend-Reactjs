@@ -2,7 +2,6 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import ContactCard from "../components/contactCard.js";
 import CarouselT from "../components/carouselTxt.js";
 import Team from '../components/team.js';
 
@@ -38,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "7px 40px",
     transition:"0.3s",
     "&:hover": {
+      transform:"scale(1.02)",
       backgroundColor: "#FBB591",
       color: "#71092C",
       boxShadow: " 0 2px 30px rgba(249, 102, 118, 0.3)",

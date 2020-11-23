@@ -74,22 +74,22 @@ export default function BottomAppBar() {
               <CreateIcon />
             </IconButton>
             <IconButton
-              style={{ color: "#10CCF9", outline: "none", marginRight: "5%" }}
-              href="/addPost"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-            >
-              <AddCircleIcon />
-            </IconButton>
-            <IconButton
-              style={{ color: "#10CCF9", outline: "none" }}
+              style={{ color: "#10CCF9", outline: "none", marginRight: "5%"  }}
               href="/click"
               edge="start"
               color="inherit"
               aria-label="open drawer"
             >
               <PhotoCameraIcon />
+            </IconButton>
+            <IconButton
+              style={{ color: "#10CCF9", outline: "none"}}
+              href="/addPost"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+            >
+              <AddCircleIcon />
             </IconButton>
           </div>
           <div className={classes.grow} />

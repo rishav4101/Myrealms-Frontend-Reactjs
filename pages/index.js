@@ -25,7 +25,10 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "20vw",
     boxShadow: " 0 1px 10px rgba(249, 102, 118, 0.5)",
     padding: "7px 40px",
+    transition:"0.3s",
+    
     "&:hover": {
+      transform:"scale(1.02)",
       backgroundColor: "#FBB591",
       color: "#71092C",
       boxShadow: " 0 2px 30px rgba(249, 102, 118, 0.3)",
@@ -123,7 +126,7 @@ export default function Home() {
                         Lobortis elementum nibh tellus molestie. Quis eleifend
                         quam adipiscing vitae proin. Volutpat lacus laoreet non
                         curabitur gravida. Nibh venenatis cras sed felis eget
-                        velit.{" "}
+                        velit.
                       </p>
                       <div className="details">
                         <p>Name Surname</p>

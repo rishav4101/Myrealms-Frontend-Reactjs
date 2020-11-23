@@ -5,24 +5,25 @@ import IconButton from "@material-ui/core/IconButton";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import InstagramIcon from "@material-ui/icons/Instagram";
-
+// rgba(196, 206, 206,0.3)
 const useStyles = makeStyles({
   root: {
       marginRight:"0",
-    boxShadow: " 0 1px 5px rgba(196, 206, 206,0.2)",
+    boxShadow: " 0 1px 5px rgba(196, 206, 206,0.3)",
     padding: "20px 5px",
     width: "250px",
     height: "300px",
     overflow: "hidden",
     backgroundColor: "#FCFCFA",
-    borderRadius: "2px",
+    borderRadius: "5px",
     transition:"0.3s",
     "&:hover":{
+        transform:"scale(1.03)",
         backgroundColor: "#FCFCFA",
-        boxShadow: " 0 1px 25px rgba(196, 206, 206,0.3)",
+        boxShadow: " 0 1px 45px rgba(196, 206, 206,0.35)",
     },
     "@media screen and (max-width: 500px)": {
-      width: "130px",
+      width: "140px",
       height: "180px",
     },
   },
@@ -75,16 +76,16 @@ export default function teamM(props) {
               {props.post}
             </p>
           </em>
-          <br/>
+          
           <Grid container justify="center">
-          <IconButton style={{color:"rgba(249, 102, 118, 0.5)", outline:"none"}} href={props.fb}>
-              <FacebookIcon/>
+          <IconButton style={{color:"rgba(251, 181, 145, 0.7)", outline:"none"}} href={props.fb}>
+              <FacebookIcon fontSize="small"/>
           </IconButton>
-          <IconButton style={{color:"rgba(249, 102, 118, 0.5)", outline:"none"}} href={props.li}>
-              <LinkedInIcon/>
+          <IconButton style={{color:"rgba(251, 181, 145, 0.7)", outline:"none"}} href={props.li}>
+              <LinkedInIcon fontSize="small" />
           </IconButton>
-          <IconButton style={{color:"rgba(249, 102, 118, 0.5)", outline:"none"}} href={props.ig}>
-              <InstagramIcon/>
+          <IconButton style={{color:"rgba(251, 181, 145, 0.7)", outline:"none"}} href={props.ig}>
+              <InstagramIcon fontSize="small" />
           </IconButton>
           </Grid>
     </div>

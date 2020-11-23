@@ -20,6 +20,7 @@ const drawerWidth = 260;
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    boxShadow:"1px 0 5px rgba(11, 139, 210, 0.12)",
     display: "flex",
   },
   appBar: {
@@ -43,10 +44,15 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
   },
   drawer: {
+    // background:"transparent",
+    // backgroundColor: "rgba(16, 204, 249, 0.05)",
     width: drawerWidth,
     flexShrink: 0,
   },
   drawerPaper: {
+    boxShadow:"2px 0 15px rgba(11, 139, 210, 0.12)",
+    backdropFilter: "blur(70px)",
+    backgroundColor: "rgba(16, 204, 249, 0.05)",
     width: drawerWidth,
   },
   drawerHeader: {
@@ -175,14 +181,15 @@ export default function PersistentDrawerRight() {
           }}
         >
           <div
-            style={{ backgroundColor: "#BFDEED" }}
+          
+           
             className={classes.drawerHeader}
           >
-            <IconButton style={{ outline: "none" }} onClick={handleDrawerClose}>
+            <IconButton style={{ outline: "none", color:"#FBB591" }} onClick={handleDrawerClose}>
               <ChevronRightIcon />
             </IconButton>
           </div>
-          <List style={{ backgroundColor: "#F3D1DB" }}>
+          <List style={{ backgroundColor: "rgba(16, 204, 249, 0.09)" }}>
             <ListItem>
               <img
                 style={{
@@ -200,8 +207,9 @@ export default function PersistentDrawerRight() {
                   display: "block",
                   color: "#644154",
                   fontSize: "18px",
-                  fontWeight: "500",
+                  fontWeight: "lighter",
                   letterSpacing: "3px",
+                  textTransform:"none",
                 }}
                 disableTypography={true}
                 primary="Your Name"
@@ -210,17 +218,12 @@ export default function PersistentDrawerRight() {
           </List>
 
           <List
-            style={{
-              color: "red",
-              height: "100vh",
-              backgroundImage: "url(/menuBG.png)",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
-            }}
+           
+          
           >
-            <MenuItem url="/account" name="My account" icname="face" />
+            <MenuItem url="/myAcc" name="My Account" icname="face" />
             <MenuItem url="/" name="Home" icname="home" />
-            <MenuItem url="/discover" name="Discover" icname="explore" />
+          
             <MenuItem url="/about" name="About" icname="more" />
             <MenuItem url="/contact" name="Contacts" icname="contacts" />
 

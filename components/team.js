@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     padding: "20px 50px",
     maxWidth: "75%",
     overflow: "hidden",
-    backgroundColor: "#FCFCFA",
+    backgroundColor: "#f5f5f4",
     borderRadius: "2px",
     "@media screen and (max-width: 700px)": {
       margin: "20px 0",
