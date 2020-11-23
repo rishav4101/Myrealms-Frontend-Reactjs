@@ -1,103 +1,249 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Icon from '@material-ui/core/Icon'
-import Navbar from '../src/components/navBar'
-import Apbar from '../src/components/appbar.js'
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-import theme from '../src/theme';
-import Button from '@material-ui/core/Button';
-import ListItem from '@material-ui/core/ListItem';
-import List from '@material-ui/core/List';
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-
-
+import Button from "@material-ui/core/Button";
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import CallIcon from "@material-ui/icons/Call";
+import WhatsAppIcon from "@material-ui/icons/WhatsApp";
+import FacebookIcon from "@material-ui/icons/Facebook";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+import InstagramIcon from "@material-ui/icons/Instagram";
+import YouTubeIcon from "@material-ui/icons/YouTube";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    margin: "0 20px"
+    margin: "0 20px",
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
+    textAlign: "center",
     color: theme.palette.text.secondary,
   },
+  contact: {
+    color: "#A5A5A5",
+    fontSize: "14px",
+    padding: "30px 0",
+    backgroundColor: "#FCFCFA",
+    boxShadow: " 0 1px 5px rgba(196, 206, 206,0.35)",
+    transition: "0.4s",
+    minWidth: "75%",
+    "&:hover": {
+      backgroundColor: "#FCFCFA",
+      boxShadow: " 0 1px 25px rgba(196, 206, 206,0.3)",
+    },
+    "@media screen and (max-width: 500px)": {
+      minWidth: "95%",
+    },
+  },
+  form: {
+    marginBottom: "4vw",
+    background: "transparent",
+    border: "1px solid #1A3D60",
+  },
+  formbg: {
+    // margin: "20px 20px 0 0",
+    boxShadow: " 0 1px 10px rgba(196, 206, 206,0.2)",
+    // padding: "20px 50px",
+    // maxWidth: "75%",
+    // overflow: "hidden",
+    backgroundColor: "hsla(60, 0%, 96%, 0.5)",
+    borderRadius: "2px",
+    //   "@media screen and (max-width: 700px)": {
+    //     margin: "20px 0",
+    //     maxWidth: "95%",
+    //     padding: "7px 1px",
+    // },
+  },
+  btn: {
+    transform: "translateX(-50%)",
+    margin: "0 50%",
+    textTransform: "uppercase",
+    fontFamily: "Roboto",
+    fontWeight: "300",
+    fontSize: "13px",
+    borderRadius: "200px",
+    backgroundColor: "#FBB591",
+    color: "#71092C",
+    maxWidth: "70vw",
+    minWidth: "20vw",
+    boxShadow: " 0 1px 10px rgba(249, 102, 118, 0.5)",
+    padding: "7px 40px",
+    transition: "0.3s",
+    "&:hover": {
+      backgroundColor: "#FBB591",
+      color: "#71092C",
+      boxShadow: " 0 2px 30px rgba(249, 102, 118, 0.3)",
+    },
+  },
 }));
-var d= new Date().getFullYear();
 
 export default function Home() {
   const classes = useStyles();
   return (
-    <>
     <div className="container">
-      <Head>
-      <script src="https://kit.fontawesome.com/138839f9b6.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" />
-        <title>My Realms-Painting the world in the rhythm of word/Contact</title>
-        <link rel="icon" href="/favicon.ico" />
-        // <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"/>
-      </Head>
-
-
       <main className="main">
-    <Navbar />
-
-    <h1 className="title">
-         <img style={{marginBottom:"5vw", paddingTop:"3vw"}} className="heading" src = "/git.png" alt = "Get in touch"/>
-       </h1>
-       <img style={{marginBottom:"5vw"}} className="vector-2" src="/contact.svg" />
-       <h3>
-         <img className="sub-sh" style={{marginTop:"80px"}} src="/wws.png" alt="Wanna write to us?" />
-       </h3>
-           <div style={{borderRadius:"10px",width:"100%",backgroundColor:"#EEF7FB", padding:"10vw"}} >
-              <form>
-              <div className="form-group " >
-              <input style={{marginBottom:"4vw", background:"transparent", border:"1px solid #1A3D60"}} type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter your name"/>
-              <input style={{marginBottom:"4vw", background:"transparent", border:"1px solid #1A3D60"}} type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter your email"/>
-              <textarea style={{marginBottom:"4vw", background:"transparent", border:"1px solid #1A3D60"}} className="form-control" id="exampleFormControlInput1" placeholder="Type your message..." rows="5"/>
-              </div>
-              <Button className="btn" href="mailto:my.realms.44@gmail.com"
+        {/* form */}
+        <Grid container justify="center" alignItems="flex-end" spacing={6}>
+          <Grid item sm={12} lg={6}>
+            <h1 className="title">
+              <img
+                style={{
+                  marginBottom: "2vw 50% 3vw",
+                  transform: "translateX(-50%)",
+                  paddingTop: "3vw",
+                }}
+                className="heading"
+                src="/git.png"
+                alt="Get in touch"
+              />
+            </h1>
+            <img
+              style={{ marginBottom: "4vw" }}
+              className="vector-2"
+              src="/contact.svg"
+            />
+          </Grid>
+          <Grid className={classes.formbg} item sm={12} lg={6}>
+            <h3
               style={{
-
-                fontFamily:"Century Gothic",
-
-              borderRadius:"5px",
-              backgroundColor:"#1A3D60",
-              color:"#d1e9f5"
-            }}
-              fullWidth={true}
-               size="large"
-               varient="contained"
-               >Send</Button>
+                textAlign: "center",
+                marginBottom: "10px",
+                fontFamily: "Playfair Display",
+              }}
+            >
+              Write to us
+            </h3>
+            <div>
+              <form>
+                <div className="form-group ">
+                  <input
+                    style={{
+                      marginBottom: "2vw",
+                      background: "transparent",
+                      border: "1px solid rgba(11, 139, 210, 0.15)",
+                    }}
+                    type="text"
+                    className="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Enter your name"
+                  />
+                  <input
+                    style={{
+                      marginBottom: "2vw",
+                      background: "transparent",
+                      border: "1px solid rgba(11, 139, 210, 0.15)",
+                    }}
+                    type="email"
+                    className="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="City, Country"
+                  />
+                  <textarea
+                    style={{
+                      marginBottom: "2vw",
+                      background: "transparent",
+                      border: "1px solid rgba(11, 139, 210, 0.15)",
+                    }}
+                    className="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="Type your message..."
+                    rows="5"
+                  />
+                </div>
+                <Button
+                  className={classes.btn}
+                  href="mailto:my.realms.44@gmail.com"
+                  size="large"
+                  varient="contained"
+                >
+                  Send
+                </Button>
               </form>
-           </div>
-           <div className="contact" style={{borderRadius:"10px", backgroundColor:"#EEF7FB", }} >
-           <div style={{textAlign:"center"}} className="form-group" >
-           <p style={{fontSize:"20px"}} ><Icon style={{fontSize:30, overflow:"visible", padding:"20px 40px 20px 0", color:"#1A3D60"}} >phone_in_talk</Icon> 9876543210 </p>
-           <p style={{fontSize:"20px"}} ><i style={{padding:"20px 10px", color:"#1A3D60"}} class="fab fa-2x fa-whatsapp"></i> 7894560321 </p>
-           <br/>
-           <h3>
-             <img className="sub-sh" style={{marginTop:"30px"}} src="/vopn2.png" alt="Wanna write to us?" />
-           </h3>
-           <br/>
-           <Button href="https://www.instagram.com/my_realms_writes/?hl=en" ><i style={{ padding:"20px", color:"#1A3D60",}}  class="fab fa-3x fa-instagram"></i></Button>
-           <Button href="https://www.instagram.com/my_realms_art/?hl=en" ><i style={{ padding:"20px", color:"#1A3D60",}}  class="fab fa-3x fa-instagram"></i></Button>
-           <Button href="https://www.instagram.com/my_realms_clicks/?hl=en" ><i style={{ padding:"20px", color:"#1A3D60",}}  class="fab fa-3x fa-instagram"></i></Button>
-           <Button href="https://www.facebook.com/my_realms-926172701062222/" ><i style={{ padding:"20px", color:"#1A3D60",}}  class="fab fa-3x fa-facebook-f"></i></Button>
-           <Button href="https://www.linkedin.com/in/my-realms/" ><i style={{ padding:"20px", color:"#1A3D60",}}  class="fab fa-3x fa-linkedin"></i></Button>
-           </div>
-           </div>
-           <Apbar/>
+            </div>
+          </Grid>
+          <Grid item sm={12} lg={6}>
+            <h3
+              style={{
+                textAlign: "center",
+                marginBottom: "10px",
+                fontFamily: "Playfair Display",
+              }}
+            >
+              Contacts
+            </h3>
 
-       </main>
-       <footer className="footer">
-       <p>&copy; My Realms {d} All rights reserved</p>
-       </footer>
-     </div>
-     </>
-   )
- }
+            <div className={classes.contact} style={{ borderRadius: "10px" }}>
+              <div
+                style={{
+                  padding: " 0 5vw",
+                  display: "flex",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  alignItems: "flex-start",
+                }}
+              >
+                <p style={{ marginBottom: "0" }}>
+                  <IconButton
+                    style={{
+                      color: "rgba(16, 204, 249, 0.5)",
+                      outline: "none",
+                    }}
+                  >
+                    <CallIcon />
+                  </IconButton>
+                  9876543210
+                </p>
+                <p style={{ marginBottom: "0" }}>
+                  <IconButton
+                    style={{
+                      color: "rgba(16, 204, 249, 0.5)",
+                      outline: "none",
+                    }}
+                  >
+                    <WhatsAppIcon />
+                  </IconButton>
+                  9876543210
+                </p>
+                <div>
+                  <IconButton
+                    style={{
+                      color: "rgba(16, 204, 249, 0.5)",
+                      outline: "none",
+                    }}
+                  >
+                    <InstagramIcon />
+                  </IconButton>
+                  <IconButton
+                    style={{
+                      color: "rgba(16, 204, 249, 0.5)",
+                      outline: "none",
+                    }}
+                  >
+                    <FacebookIcon />
+                  </IconButton>
+                  <IconButton
+                    style={{
+                      color: "rgba(16, 204, 249, 0.5)",
+                      outline: "none",
+                    }}
+                  >
+                    <LinkedInIcon />
+                  </IconButton>
+                  <IconButton
+                    style={{
+                      color: "rgba(16, 204, 249, 0.5)",
+                      outline: "none",
+                    }}
+                  >
+                    <YouTubeIcon />
+                  </IconButton>
+                </div>
+              </div>
+            </div>
+          </Grid>
+        </Grid>
+      </main>
+    </div>
+  );
+}

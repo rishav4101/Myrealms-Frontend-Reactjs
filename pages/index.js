@@ -5,9 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Nfeed from "../src/components/nfeed.js";
-import { useTypedSelector } from "../lib/reducers";
-import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,14 +16,34 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
   },
+  btn: {
+    textTransform: "uppercase",
+    fontFamily: "Roboto",
+    fontWeight: "300",
+    fontSize: "13px",
+    borderRadius: "200px",
+    backgroundColor: "#FBB591",
+    color: "#71092C",
+    maxWidth: "70vw",
+    minWidth: "20vw",
+    boxShadow: " 0 1px 10px rgba(249, 102, 118, 0.5)",
+    padding: "7px 40px",
+    transition: "0.3s",
+
+    "&:hover": {
+      transform: "scale(1.02)",
+      backgroundColor: "#FBB591",
+      color: "#71092C",
+      boxShadow: " 0 2px 30px rgba(249, 102, 118, 0.3)",
+    },
+  },
 }));
-var d = new Date().getFullYear();
 
 export default function Home() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const fetchedStatus = useTypedSelector((state) => state.display.status);
-  
+
   React.useEffect(() => {
     dispatch({
       type: "FETCH_STATUS",
@@ -34,44 +51,24 @@ export default function Home() {
   }, []);
 
   console.log(fetchedStatus);
- 
+
   return (
     <>
       <div className="container">
-        <Head>
-          <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-            crossorigin="anonymous"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-          />
-          <title>My Realms-Painting the world in the rhythm of word</title>
-          <link rel="icon" href="/favicon.ico" />
-          //{" "}
-          <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
-
         <main className="main">
-          <Navbar />
-          <Apbar />
-
           <h1 className="title">
             <img className="heading" src="/myrH1.png" alt="My realms" />
           </h1>
           <div className="pc">
-            <h2 className="description">
+            <h2 style={{ marginBottom: "30px" }} className="description">
               Painting the world in the rhythm of words
             </h2>
           </div>
-          <div className="header">
-            <></>
+          <div>
+            <img
+              src="/homev-1.png"
+              style={{ maxHeight: "50vh", maxWidth: "80vw", margin: "0 auto" }}
+            />
           </div>
 
           <div className={classes.root}>
@@ -97,19 +94,8 @@ export default function Home() {
                     faucibus interdum posuere lorem.
                   </p>
                   <Button
+                    className={classes.btn}
                     href="/about"
-                    style={{
-                      textTransform: "uppercase",
-                      fontFamily: "Century Gothic",
-                      fontSize: "16px",
-                      borderRadius: "200px",
-                      backgroundColor: "#71092C",
-                      color: "#ffffff",
-                      maxWidth: "70vw",
-                      minWidth: "20vw",
-                      boxShadow: " 0 4px 10px #BEBEBE",
-                      padding: "7px 40px",
-                    }}
                     varient="contained"
                   >
                     More about us
@@ -153,7 +139,7 @@ export default function Home() {
                         Lobortis elementum nibh tellus molestie. Quis eleifend
                         quam adipiscing vitae proin. Volutpat lacus laoreet non
                         curabitur gravida. Nibh venenatis cras sed felis eget
-                        velit.{" "}
+                        velit.
                       </p>
                       <div className="details">
                         <p>Name Surname</p>
@@ -161,13 +147,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div
-                    className="testimonial"
-                    style={{
-                      backgroundImage:
-                        "radial-gradient(circle at top left,#4b4b63 15% , #000)",
-                    }}
-                  >
+                  <div className="testimonial">
                     <img
                       className="avatar"
                       style={{ float: "left" }}
@@ -191,25 +171,7 @@ export default function Home() {
               </Grid>
             </Grid>
           </div>
-          <div style={{ marginBottom: "0" }}>
-            <h3>
-              <img
-                className="sub-h"
-                src="/insights.png"
-                alt="insights to our work"
-              />
-            </h3>
-          </div>
         </main>
-        <Nfeed
-          name="Name Surname"
-          time="55s"
-          caption="This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like."
-          url="/post/5.jpeg"
-        />
-        <footer className="footer">
-          <p>&copy; My Realms {d} All rights reserved</p>
-        </footer>
       </div>
     </>
   );

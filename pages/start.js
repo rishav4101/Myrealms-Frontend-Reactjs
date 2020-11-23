@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+import Button from "@material-ui/core/Button";
+import React from "react";
+
+=======
 import Head from "next/head";
 import Link from "next/link";
 import Icon from "@material-ui/core/Icon";
@@ -11,11 +16,14 @@ import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 import React from "react";
 var d = new Date().getFullYear();
+>>>>>>> e15af2d3de40ec750f500a23707017f874813029
 
 export default function start() {
   return (
     <>
       <div className="container">
+<<<<<<< HEAD
+=======
         <Head>
           <link
             rel="stylesheet"
@@ -38,6 +46,7 @@ export default function start() {
           />
         </Head>
 
+>>>>>>> e15af2d3de40ec750f500a23707017f874813029
         <main className="main">
           <h1
             className="title"
@@ -94,10 +103,13 @@ export default function start() {
             Sign Me Up
           </Button>
         </main>
+<<<<<<< HEAD
+=======
 
         <footer className="footer">
           <p>&copy; My Realms {d} All rights reserved</p>
         </footer>
+>>>>>>> e15af2d3de40ec750f500a23707017f874813029
       </div>
     </>
   );
