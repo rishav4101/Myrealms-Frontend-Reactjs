@@ -1,24 +1,13 @@
-<<<<<<< HEAD
-import React from "react";
-=======
 import Head from 'next/head';
 import React from 'react';
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
 import {
   withStyles,
   makeStyles,
   createMuiTheme,
-<<<<<<< HEAD
-} from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import { green } from "@material-ui/core/colors";
-import Button from "@material-ui/core/Button";
-=======
 } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { green } from '@material-ui/core/colors';
 import Button from '@material-ui/core/Button';
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
 
 const useStyles = makeStyles((theme) => ({
   root: {

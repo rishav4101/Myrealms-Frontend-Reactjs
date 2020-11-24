@@ -1,28 +1,16 @@
-<<<<<<< HEAD
-import React from "react";
-=======
 import Head from 'next/head';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
 import {
   withStyles,
   makeStyles,
   createMuiTheme,
-<<<<<<< HEAD
-} from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import { green } from "@material-ui/core/colors";
-
-import Button from "@material-ui/core/Button";
-=======
 } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { green } from '@material-ui/core/colors';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import { useTypedSelector } from '../lib/reducers';
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,15 +24,6 @@ const useStyles = makeStyles((theme) => ({
 
 const ValidationTextField = withStyles({
   root: {
-<<<<<<< HEAD
-    "& input:valid + fieldset": {
-      borderColor: "#BFDEED",
-      borderRadius: "200px",
-      borderWidth: 2,
-    },
-    "& input:invalid + fieldset": {
-      borderColor: "red",
-=======
     '& input:valid + fieldset': {
       borderColor: '#BFDEED',
       borderRadius: "200px",
@@ -52,7 +31,6 @@ const ValidationTextField = withStyles({
     },
     '& input:invalid + fieldset': {
       borderColor: 'red',
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
       borderRadius: "200px",
       borderWidth: 2,
     },
@@ -70,25 +48,13 @@ const theme = createMuiTheme({
   },
 });
 
-<<<<<<< HEAD
-=======
 var d = new Date().getFullYear();
 
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
 export default function signUp() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const fetchUser = useTypedSelector((state) => state.display.user_resp);
   const [values, setValues] = React.useState({
-<<<<<<< HEAD
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false,
-  });
-
-=======
     amount: '',
     password: '',
     weight: '',
@@ -116,7 +82,6 @@ export default function signUp() {
     
   };
 
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
@@ -132,48 +97,6 @@ export default function signUp() {
   return (
     <>
       <div className="container">
-<<<<<<< HEAD
-        <main className="main">
-          <h1 style={{ marginTop: "50px", padding: "0" }} className="title">
-            <img
-              style={{ marginTop: "50px", padding: "0" }}
-              className="heading"
-              src="/myrd.png"
-              alt="My realms"
-            />
-          </h1>
-          <div className="pc">
-            <h2
-              style={{
-                color: " rgba(237, 18, 91, 0.6)",
-                textAlign: "center",
-                marginBottom: "0",
-              }}
-              className="b-margin subt"
-            >
-              Painting the world in the rhythm of words
-            </h2>
-          </div>
-          <form
-            style={{
-              margin: "5vw auto 0",
-              flexDirection: "column",
-              fontFamily: "Century Gothic",
-            }}
-            className={classes.root}
-            noValidate
-          >
-            <div>
-              <ValidationTextField
-                autoFocus
-                style={{
-                  maxWidth: "70vw",
-                  minWidth: "20vw",
-                  fontFamily: "Century Gothic",
-                  color: " #Ed165a",
-                  borderRadius: "200px",
-                }}
-=======
         <Head>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossOrigin="anonymous" />
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" />
@@ -197,7 +120,6 @@ export default function signUp() {
               <ValidationTextField
                 autoFocus
                 style={{ maxWidth: "70vw", minWidth: "20vw", fontFamily: "Century Gothic", color: " #Ed165a", borderRadius: "200px" }}
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
                 className={classes.margin}
                 label="My Name "
                 required
@@ -209,17 +131,7 @@ export default function signUp() {
             <div>
               <ValidationTextField
                 autoFocus
-<<<<<<< HEAD
-                style={{
-                  maxWidth: "70vw",
-                  minWidth: "20vw",
-                  fontFamily: "Century Gothic",
-                  color: " #Ed165a",
-                  borderRadius: "200px",
-                }}
-=======
                 style={{ maxWidth: "70vw", minWidth: "20vw", fontFamily: "Century Gothic", color: " #Ed165a", borderRadius: "200px" }}
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
                 className={classes.margin}
                 label="My Email "
                 type="Email"
@@ -231,70 +143,13 @@ export default function signUp() {
             </div>
             <div>
               <ValidationTextField
-<<<<<<< HEAD
-                style={{
-                  maxWidth: "70vw",
-                  minWidth: "20vw",
-                  fontFamily: "Century Gothic",
-                  color: " #Ed165a",
-                }}
-=======
                 style={{ maxWidth: "70vw", minWidth: "20vw", fontFamily: "Century Gothic", color: " #Ed165a" }}
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
                 className={classes.margin}
                 id="outlined-password-input"
                 required
                 label="My Password"
                 autoComplete="current-password"
                 variant="outlined"
-<<<<<<< HEAD
-                type={values.showPassword ? "text" : "password"}
-                value={values.password}
-                onChange={handleChange("password")}
-                size="small"
-              />
-            </div>
-          </form>
-          <Button
-            href="/"
-            className={classes.margin}
-            style={{
-              textTransform: "uppercase",
-              fontFamily: "Century Gothic",
-              fontSize: "16px",
-              borderRadius: "200px",
-              backgroundColor: "#Ed165a",
-              color: "#FDE7EB",
-              maxWidth: "70vw",
-              minWidth: "20vw",
-              boxShadow: " 0 4px 10px #BEBEBE",
-              padding: "7px 75px",
-            }}
-            size="large"
-            varient="contained"
-          >
-            Sign Up
-          </Button>
-          <p
-            className="text description"
-            style={{
-              marginTop: "20px",
-              color: "#Ed165a",
-              paddingBottom: "5px",
-            }}
-          >
-            I have an account,{" "}
-            <a
-              href="/signIn"
-              style={{
-                textDecoration: "none",
-                textShadow: "0 4px 10px  #Ed165a",
-              }}
-            >
-              Sign me in
-            </a>
-          </p>
-=======
                 type={values.showPassword ? 'text' : 'password'}
                 value={values.password}
                 onChange={handleChange('password')}
@@ -308,7 +163,6 @@ export default function signUp() {
             style={{ textTransform: "uppercase", fontFamily: "Century Gothic", fontSize: "16px", borderRadius: "200px", backgroundColor: "#Ed165a", color: "#FDE7EB", maxWidth: "70vw", minWidth: "20vw", boxShadow: " 0 4px 10px #BEBEBE", padding: "7px 75px", }} size="large" variant="contained" >Sign Up</Button>
           <p className="text description" style={{ marginTop: "20px", color: "#Ed165a", paddingBottom: "5px" }}>I have an account, <a href="/signIn" style={{ textDecoration: "none", textShadow: "0 4px 10px  #Ed165a" }}>Sign me in</a></p>
 
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
         </main>
 
         <footer className="footer">
@@ -316,9 +170,5 @@ export default function signUp() {
         </footer>
       </div>
     </>
-<<<<<<< HEAD
-  );
-=======
   )
->>>>>>> e15af2d3de40ec750f500a23707017f874813029
 }
