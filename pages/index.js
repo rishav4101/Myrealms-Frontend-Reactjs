@@ -1,10 +1,12 @@
 import Head from "next/head";
-import Navbar from "../src/components/navBar";
-import Apbar from "../src/components/appbar.js";
+import Navbar from "../components/navBar";
+import Apbar from "../components/appbar.js";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import { useDispatch, useSelector } from 'react-redux';
+import { useTypedSelector } from '../lib/reducers';
 
 const useStyles = makeStyles((theme) => ({
   root: {

@@ -3,7 +3,7 @@ import App, { AppContext } from 'next/app'
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import theme from '../src/theme';
+import theme from '../theme';
 import '../styles/globals.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

@@ -13,7 +13,7 @@ const reducer = (state = initialState, action) => {
         case "STATUS_FETCHED":
             return {...state, status: action.payload};
         case "SIGNUP":
-            console.log("hiiii")
+            console.log(action.payload);
             return {...state, user_resp: action.payload};
         default:
             return state;

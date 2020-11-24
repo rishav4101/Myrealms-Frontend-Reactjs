@@ -53,7 +53,7 @@ var d = new Date().getFullYear();
 export default function signUp() {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const fetchUser = useTypedSelector((state) => state.display.user_resp);
+  
   const [values, setValues] = React.useState({
     amount: '',
     password: '',
@@ -71,17 +71,20 @@ export default function signUp() {
       type: "SIGNUP_USER",
       payload: JSON.stringify({
         user: {
-          email: "kr",
-          password: "kr",
-          username: "kr",
+          email: "new5",
+          password: "new5",
+          username: "new5"
         }
       })
     });
     console.log('dispatched');
-    console.log(fetchUser);
+    
     
   };
 
+  const fetchUser = useTypedSelector((state) => state.display.user_resp);
+  console.log(fetchUser);
+  
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
